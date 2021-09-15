@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container  mt-4">
+  <form class="form-signin" method ="post">
+    {% csrf_token %}
+    {% if error %}
+    <div class="alert alert-danger text-center role="alert">
+      {{error}}
+    </div>
+    {% endif %} 
+    
+    <h1 class="h3 mb-3 font-weight-normal text-center ">Please Register </h1>
+    <label for="inputEmail" class="sr-only mt-2">First Name</label>
+    <input type="text" name="f_name" id="inputEmail" class="form-control mt-3" placeholder="First Name" required autofocus>
+
+    <label for="inputEmail" class="sr-only mt-2">Last Name</label>
+    <input type="text" name = "l_name" id="inputEmail" class="form-control mt-3" placeholder=" Last Name " required autofocus>
+
+    <label for="inputEmail" class="sr-only mt-2">Email address</label>
+    <input type="email" name= "email" id="inputEmail" class="form-control mt-3" placeholder="Email address" required autofocus>
+
+    <label for="inputPassword" class="sr-only mt-2">Password</label>
+    <input type="password" name="password" id="inputPassword" class="form-control mt-3" placeholder="Password" required>
+    <p class="mt-2 "> Already have Account <a href="{% url 'login_attempt'%}">Login</a></p>
+    <a href='{% url "thanks"%}' class=" w-100 btn btn-primary btn-lg active" role="button" aria-pressed="true">Register</a>
+   
+    <p class="mt-5 mb-3 text-muted text-center "> &copy; 2017-2019</p>
+  </form>
+</div>
+
+{% endblock content %}
+
+
+
+

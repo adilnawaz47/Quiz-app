@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="container">
+    
+        <h4 class = 'text-center display-4 mt-5 text-success'>Thank you for register</h4>
+      
+
+      <div class="alert alert-secondary mt-5 text-center" role="alert">
+        <h3>Click here for login <a class="btn btn-primary" href="{% url 'login_attempt'%}" role="button">Login</a></h3>
+
+      </div>
+    
+</div>
+
+
+
+
+
+{% endblock content %}
